@@ -18,17 +18,15 @@ class Encode {
         $ran = [random]::new()
         $enc = [char[]]::new($Value.Length * $this.EncodingComplexity)
 
+        for($i = 0; $i -lt $enc.Length; $i++) {
+            $enc[$i] = $set[$ran.Next($set.Length)]
+        }
+        
         for($i = 0;  $i -lt $Value.Length; $i++) {
             do {
                 $x = $ran.Next($enc.Length)
             } until($ref.Add($x))
             $enc[$x] = $Value[$i]
-        }
-
-        for($i = 0; $i -lt $enc.Length; $i++) {
-            if($i -notin $ref) {
-                $enc[$i] = $set[$ran.Next($set.Length)]
-            }
         }
 
         $this.EncodedMessage = [string]::new($enc)
