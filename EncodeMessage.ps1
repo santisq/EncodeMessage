@@ -7,6 +7,11 @@ class Encode {
         $this.Shuffle($Value)
     }
 
+    Encode ([string] $Value, [int] $Complexity) {
+        $this.EncodingComplexity = $Complexity
+        $this.Shuffle($Value)
+    }
+
     [void] Shuffle([string] $Value) {
         $set = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[{]};:<>|./?'
         $ref = [Collections.Generic.HashSet[int]]::new()
@@ -36,6 +41,10 @@ class Decode {
         return [Decode]::DecodeMessage($Object.EncodedMessage, $Object.Map, $Object.EncodingComplexity)
     }
 
+    static [string] DecodeMessage ([string] $EncodedMessage, [int[]] $Map) {
+        return [Decode]::DecodeMessage($EncodedMessage, $Map, 3)
+    }
+
     static [string] DecodeMessage ([string] $EncodedMessage, [int[]] $Map, [int] $Complexity) {
         $decoded = [char[]]::new($EncodedMessage.Length / $Complexity)
         for($i = 0; $i -lt $decoded.Length; $i++) {
@@ -44,7 +53,3 @@ class Decode {
         return [string]::new($decoded)
     }
 }
-
-$enc = [Encode] 'hello world 123!'
-[Decode]::DecodeMessage($enc)
-[Decode]::DecodeMessage($enc.EncodedMessage, $enc.Map, $enc.EncodingComplexity)
