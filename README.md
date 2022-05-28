@@ -9,7 +9,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 | Command | Description |
 | ----------- | ---- |
 | `[Encode](string)` | Initializes a new instance of the `Encode` class encoding the _string_ with the default `EncodingComplexity` value. |
-| `[Encode](string, 4)` | Initializes a new instance of the `Encode` class encoding the _string_ with a `EncodingComplexity` value of 4. |
+| `[Encode](string, 4)` &nbsp; &nbsp; | Initializes a new instance of the `Encode` class encoding the _string_ with a `EncodingComplexity` value of 4. |
 
 ### Properties
 
@@ -27,7 +27,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 | ---- | ---- |
 | `DecodeMessage(Encode)` | Takes an object of the class `Encode` as argument to decode the message. |
 | `DecodeMessage(string, int[])` | Takes an _encoded string_ and the Map a assumes default Encoding Complexity to decode the message. |
-| `DecodeMessage(string, int[], int)` | Takes an _encoded string_, the Map and the Encoding Complexity to decode the message. |
+| `DecodeMessage(string, int[], int)` &nbsp; &nbsp; &nbsp; | Takes an _encoded string_, the Map and the Encoding Complexity to decode the message. |
 
 ## Usage
 
