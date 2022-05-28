@@ -33,7 +33,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 
 ### Encoding a message with default Encoding Complexity
 
-```ps
+```
 PS /> $message = 'hello world 123!'
 PS /> $enc = [Encode] $message
 PS /> $enc
@@ -45,7 +45,7 @@ EncodingComplexity EncodedMessage                                   Map
 
 ### Encoding a message with custom Encoding Complexity
 
-```ps
+```
 PS /> $enc = [Encode]::new('hello world 123!', 4)
 PS /> $enc
 
