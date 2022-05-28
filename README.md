@@ -9,7 +9,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 | Command | Description |
 | ----------- | ---- |
 | `[Encode](string)` | Initializes a new instance of the `Encode` class encoding the _string_ with the default `EncodingComplexity` value. |
-| `[Encode](string, 4)` &nbsp; &nbsp; | Initializes a new instance of the `Encode` class encoding the _string_ with a `EncodingComplexity` value of 4. |
+| `[Encode](string, 4)` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Initializes a new instance of the `Encode` class encoding the _string_ with a `EncodingComplexity` value of 4. |
 
 ### Properties
 
