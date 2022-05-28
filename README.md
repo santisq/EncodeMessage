@@ -33,7 +33,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 
 ### Encoding a message with default Encoding Complexity
 
-```
+```powershell
 PS /> $message = 'hello world 123!'
 PS /> $enc = [Encode] $message
 PS /> $enc
@@ -51,12 +51,12 @@ PS /> $enc
 
 EncodingComplexity EncodedMessage                                                   Map
 ------------------ --------------                                                   ---
-                 4 U8dj^^2x{##3dr0aVyC!aP?DHl}lKGBY2tdmt6P1o%/h27oe.Th l 8ZZ39mwb|3 {50, 47, 25, 52…}
+                 4 U8dj^^2x{-_3dr0aVyC!aP?DHl}lKGBY2tdmt6P1o%/h27oe.Th l 8ZZ39mwb|3 {50, 47, 25, 52…}
 ```
 
 ### Decoding a message using a `Encode` object
 
-```ps
+```
 PS /> $enc = [Encode]::new('hello world 123!', 4)
 PS /> [Decode]::DecodeMessage($enc)
 
@@ -65,7 +65,7 @@ hello world 123!
 
 ### Decoding a message with a Map
 
-```ps
+```powershell
 PS /> $enc = [Encode] 'hello world 123!'
 PS /> [Decode]::DecodeMessage($enc.EncodedMessage, $enc.Map)
 
@@ -74,7 +74,7 @@ PS /> [Decode]::DecodeMessage($enc.EncodedMessage, $enc.Map)
 
 ### Decoding a message with a Map and custom Encoding Complexity
 
-```ps
+```powershell
 PS /> $message = 'hello world 123!'
 PS /> $enc = [Encode]::new($message, 5)
 PS /> [Decode]::DecodeMessage($enc.EncodedMessage, $enc.Map, $enc.EncodingComplexity)
