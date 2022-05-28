@@ -27,7 +27,7 @@ A fun exercise at encoding and decoding strings with [PowerShell classes](https:
 | ---- | ---- |
 | `DecodeMessage(Encode)` | Takes an object of the class `Encode` as argument to decode the message. |
 | `DecodeMessage(string, int[])` | Takes an _encoded string_ and the Map a assumes default Encoding Complexity to decode the message. |
-| `DecodeMessage(string, int[], int)` &nbsp; &nbsp; &nbsp; &nbsp; | Takes an _encoded string_, the Map and the Encoding Complexity to decode the message. |
+| `DecodeMessage(string, int[], int)` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Takes an _encoded string_, the Map and the Encoding Complexity to decode the message. |
 
 ## Usage
 
